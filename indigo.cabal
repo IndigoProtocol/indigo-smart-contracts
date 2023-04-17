@@ -1,0 +1,253 @@
+cabal-version: 3.0
+name:          indigo
+version:       0.1.0.0
+author:        Indigo Labs
+maintainer:    info@indigo-labs.io
+data-files:    tests/data/AQB.csv
+
+common lang
+  default-language: Haskell2010
+  default-extensions:
+    BangPatterns
+    DataKinds
+    DeriveGeneric
+    DerivingStrategies
+    DuplicateRecordFields
+    FlexibleContexts
+    FlexibleInstances
+    GeneralizedNewtypeDeriving
+    ImportQualifiedPost
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    NoImplicitPrelude
+    NumericUnderscores
+    OverloadedStrings
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    UndecidableInstances
+
+  ghc-options:
+    -Wall -Werror -fno-ignore-interface-pragmas
+    -fno-omit-interface-pragmas -fobject-code -fno-strictness
+    -fno-specialise -fplugin-opt PlutusTx.Plugin:defer-errors
+
+  if !(impl(ghcjs) || os(ghcjs))
+    build-depends: plutus-tx-plugin
+
+flag debug
+  description: Activates trace messages
+  default:     True
+  manual:      True
+
+flag plutonomy
+  description: Optimize on-chain code with Plutonomy
+  default:     True
+  manual:      True
+
+flag typed
+  description: Optimize on-chain code with Plutonomy
+  default: True
+  manual: True
+
+library
+  import:          lang
+  hs-source-dirs:  src
+  exposed-modules:
+    Indigo.Contracts.CDP.Common
+    Indigo.Contracts.CDP.OnChain
+    Indigo.Contracts.Collector.Common
+    Indigo.Contracts.Collector.OnChain
+    Indigo.Contracts.Helpers
+    Indigo.Contracts.Governance.Execute.Common
+    Indigo.Contracts.Governance.Execute.OnChain
+    Indigo.Contracts.Governance.Gov.Common
+    Indigo.Contracts.Governance.Gov.OnChain
+    Indigo.Contracts.Governance.Poll.Common
+    Indigo.Contracts.Governance.Poll.OnChain
+    Indigo.Contracts.Governance.VersionRegistry.Common
+    Indigo.Contracts.Governance.VersionRegistry.OnChain
+    Indigo.Contracts.Liquidity.Common
+    Indigo.Contracts.Liquidity.OnChain
+    Indigo.Contracts.Oracle.Common
+    Indigo.Contracts.Oracle.OnChain
+    Indigo.Contracts.StabilityPool.Common
+    Indigo.Contracts.StabilityPool.OnChain
+    Indigo.Contracts.Staking.Common
+    Indigo.Contracts.Staking.OnChain
+    Indigo.Contracts.Treasury.Common
+    Indigo.Contracts.Treasury.OnChain
+    Indigo.Data.Decimal
+    Indigo.Data.Token
+    Indigo.Utils.Helpers
+    Indigo.Utils.Spooky
+    Indigo.Utils.Spooky.Helpers
+    Indigo.Utils.Utils
+  build-depends:
+    , aeson
+    , base                       >=4.9 && <5
+    , bytestring
+    , containers
+    , data-default
+    , either
+    , freer-extras
+    , freer-simple
+    , hashable
+    , lens
+    , openapi3
+    , plutonomy
+    , plutus-contract
+    , plutus-core
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-ledger-constraints
+    , plutus-pab
+    , plutus-script-utils
+    , plutus-tx
+    , plutus-tx-plugin
+    , plutus-tx-spooky
+    , plutus-use-cases
+    , random
+    , scientific
+    , tasty
+    , text
+
+  if flag(debug)
+    cpp-options: -DDEBUG
+
+  if flag(plutonomy)
+    cpp-options: -DPLUTONOMY
+
+  if flag(typed)
+    cpp-options:
+      -DTypedSpooky
+
+executable format-benchmarks
+  import:           lang
+  main-is:          Main.hs
+  hs-source-dirs:   format-benchmarks
+  ghc-options:      -threaded -Wall
+  default-language: Haskell2010
+  build-depends:
+    , base           >=4.9 && <5
+    , extra
+    , prettyprinter
+    , regex-tdfa
+    , xml
+
+executable serialise-contracts
+  main-is:        Main.hs
+  hs-source-dirs: serialise
+  ghc-options:    -Wall
+  build-depends:
+    , base                  >=4.9 && <5
+    , base16-bytestring
+    , bytestring
+    , cardano-api
+    , directory
+    , filepath
+    , indigo
+    , optparse-applicative
+    , plutus-contract
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-tx
+    , serialise
+    , text
+
+executable hash-checks
+  import:          lang
+  main-is: Main.hs
+  hs-source-dirs: hash-checks
+  ghc-options:    -Wall
+  build-depends:
+    , base                  >=4.9 && <5
+    , indigo
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-tx
+    , base16-bytestring
+
+test-suite indigo-tests
+  import:         lang
+  type:           exitcode-stdio-1.0
+  main-is:        Spec.hs
+  hs-source-dirs: tests
+  other-modules:
+    Options
+    Spec.AdaptiveQuorumSpec
+    Spec.CDP.Asserts
+    Spec.CDP.Benchmark
+    Spec.CDP.Helpers
+    Spec.CDP.Params
+    Spec.CDP.Script
+    Spec.CDP.Transactions
+    Spec.Collector.Script
+    Spec.Collector.Benchmark
+    Spec.Collector.Transactions
+    Spec.Governance.Benchmark
+    Spec.Governance.Helpers
+    Spec.Governance.Params
+    Spec.Governance.Script
+    Spec.Governance.Transactions
+    Spec.Liquidity.Benchmark
+    Spec.Liquidity.Helpers
+    Spec.Liquidity.Params
+    Spec.Liquidity.Script
+    Spec.Liquidity.Transactions
+    Spec.Oracle.Benchmark
+    Spec.Oracle.Helpers
+    Spec.Oracle.Script
+    Spec.Oracle.Transactions
+    Spec.StabilityPool.Benchmark
+    Spec.StabilityPool.Helpers
+    Spec.StabilityPool.Params
+    Spec.StabilityPool.Script
+    Spec.StabilityPool.Test
+    Spec.StabilityPool.Transactions
+    Spec.Staking.Asserts
+    Spec.Staking.Benchmark
+    Spec.Staking.Helpers
+    Spec.Staking.Params
+    Spec.Staking.Script
+    Spec.Staking.Transactions
+    Spec.Treasury.Script
+    Utils.Helpers
+    Utils.MintPolicies
+    Utils.Mock
+
+  build-depends:
+    , aeson
+    , base                  >=4.9 && <5
+    , bytestring
+    , cardano-api
+    , cassava
+    , containers
+    , data-default
+    , freer-extras
+    , freer-simple
+    , indigo
+    , lens
+    , mtl
+    , optparse-applicative
+    , plutonomy
+    , plutus-contract
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-script-utils
+    , plutus-simple-model
+    , plutus-tx
+    , plutus-use-cases
+    , random
+    , serialise
+    , split
+    , streaming
+    , string-random
+    , tasty
+    , tasty-ant-xml
+    , tasty-hunit
+    , text
+    , time
+    , vector

@@ -1,0 +1,674 @@
+CDP:
+  init ref script creator:
+    size  : 40.25%
+    mem   : 0.00%
+    steps : 0.00%
+  init ref script:
+    size  : 77.98%
+    mem   : 0.00%
+    steps : 0.00%
+  init ref script collector:
+    size  : 21.12%
+    mem   : 0.00%
+    steps : 0.00%
+  open position:
+    size  : 20.01%
+    mem   : 35.01%
+    steps : 13.51%
+  deposit:
+    size  : 3.70%
+    mem   : 19.34%
+    steps : 7.47%
+  withdraw:
+    size  : 4.29%
+    mem   : 33.13%
+    steps : 13.00%
+  mint:
+    size  : 11.77%
+    mem   : 27.50%
+    steps : 10.66%
+  burn:
+    size  : 11.30%
+    mem   : 25.26%
+    steps : 9.74%
+  close:
+    size  : 19.35%
+    mem   : 42.64%
+    steps : 16.92%
+  freeze:
+    size  : 2.83%
+    mem   : 11.56%
+    steps : 4.59%
+  liquidate:
+    size  : 19.23%
+    mem   : 48.98%
+    steps : 18.84%
+  partial liquidate:
+    size  : 11.57%
+    mem   : 40.74%
+    steps : 15.64%
+  merge 2 CDPs:
+    size  : 2.73%
+    mem   : 19.00%
+    steps : 7.47%
+  merge 3 CDPs:
+    size  : 3.28%
+    mem   : 30.63%
+    steps : 12.26%
+  merge 4 CDPs:
+    size  : 3.83%
+    mem   : 44.24%
+    steps : 17.93%
+  merge 8 CDPs:
+    size  : 6.03%
+    mem   : 118.47%
+    steps : 49.36%
+  EpochToScaleToSum specific:
+    SP Close between 2 EpochToScaleToSum snapshots (1, 1, 6) items:
+      size  : 15.28%
+      mem   : 60.39%
+      steps : 23.97%
+    SP Close between 2 EpochToScaleToSum snapshots (5, 5, 6) items:
+      size  : 15.28%
+      mem   : 63.79%
+      steps : 25.33%
+    SP Deposit between 2 EpochToScaleToSum snapshots (1, 1, 6) items:
+      size  : 8.45%
+      mem   : 76.29%
+      steps : 29.76%
+    SP Deposit between 2 EpochToScaleToSum snapshots (5, 5, 6) items:
+      size  : 8.43%
+      mem   : 80.00%
+      steps : 31.21%
+    StabilityPool record epochToScaleToSum 5 items:
+      size  : 85.22%
+      mem   : 28.39%
+      steps : 10.50%
+Oracle:
+  init ref script:
+    size  : 20.21%
+    mem   : 0.00%
+    steps : 0.00%
+  start oracle:
+    size  : 2.25%
+    mem   : 0.00%
+    steps : 0.00%
+  feed oracle:
+    size  : 2.32%
+    mem   : 9.63%
+    steps : 4.11%
+Stability pool:
+  init ref script:
+    size  : 74.29%
+    mem   : 0.00%
+    steps : 0.00%
+  create:
+    size  : 13.85%
+    mem   : 36.08%
+    steps : 13.24%
+  adjust:
+    size  : 7.01%
+    mem   : 65.30%
+    steps : 25.44%
+  adjust (withdraw):
+    size  : 7.51%
+    mem   : 65.71%
+    steps : 25.61%
+  close:
+    size  : 13.68%
+    mem   : 51.93%
+    steps : 20.65%
+Governance:
+  Upgrades:
+    Execute identity Gov Upgrade proposal and upgrade correctly:
+      size  : 23.60%
+      mem   : 17.96%
+      steps : 7.19%
+    Execute Gov parameter Upgrade proposal and upgrade correctly:
+      size  : 23.60%
+      mem   : 17.96%
+      steps : 7.19%
+    Execute version increment Gov datum upgrade proposal and upgrade correctly:
+      size  : 23.60%
+      mem   : 17.96%
+      steps : 7.19%
+    init ref script for gov:
+      size  : 37.48%
+      mem   : 0.00%
+      steps : 0.00%
+    init ref script for poll manager:
+      size  : 63.01%
+      mem   : 0.00%
+      steps : 0.00%
+    init ref script for poll:
+      size  : 32.56%
+      mem   : 0.00%
+      steps : 0.00%
+    init ref script for execute:
+      size  : 65.03%
+      mem   : 0.00%
+      steps : 0.00%
+  Create Asset:
+    create proposal succeeds:
+      size  : 13.90%
+      mem   : 21.09%
+      steps : 8.16%
+    create all shards succeeds:
+      size  : 21.95%
+      mem   : 41.63%
+      steps : 16.82%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.49%
+      mem   : 33.96%
+      steps : 13.54%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 15.71%
+      mem   : 30.90%
+      steps : 12.22%
+    merge all shards no votes succeeds:
+      size  : 18.19%
+      mem   : 180.51%
+      steps : 75.37%
+    vote succeeds:
+      size  : 4.69%
+      mem   : 20.07%
+      steps : 8.68%
+    merge all shards with votes succeeds:
+      size  : 18.57%
+      mem   : 182.20%
+      steps : 76.01%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 14.87%
+      mem   : 77.70%
+      steps : 31.13%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 14.31%
+      mem   : 62.75%
+      steps : 24.98%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 13.75%
+      mem   : 48.34%
+      steps : 19.08%
+    end proposal now succeeds:
+      size  : 21.62%
+      mem   : 41.71%
+      steps : 18.20%
+    end proposal in 100 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    end failed proposal now succeeds:
+      size  : 11.55%
+      mem   : 23.32%
+      steps : 11.02%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.62%
+      mem   : 14.57%
+      steps : 5.72%
+    execute succeeds:
+      size  : 29.91%
+      mem   : 42.71%
+      steps : 16.15%
+  Upgrade Protocol:
+    create proposal succeeds:
+      size  : 13.51%
+      mem   : 22.52%
+      steps : 8.63%
+    create all shards succeeds:
+      size  : 21.55%
+      mem   : 43.54%
+      steps : 17.62%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.10%
+      mem   : 35.87%
+      steps : 14.33%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 15.31%
+      mem   : 32.80%
+      steps : 13.02%
+    merge all shards no votes succeeds:
+      size  : 17.57%
+      mem   : 180.44%
+      steps : 75.32%
+    vote succeeds:
+      size  : 4.69%
+      mem   : 20.07%
+      steps : 8.68%
+    merge all shards with votes succeeds:
+      size  : 17.95%
+      mem   : 182.13%
+      steps : 75.96%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 14.25%
+      mem   : 77.63%
+      steps : 31.09%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 13.68%
+      mem   : 62.68%
+      steps : 24.93%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 13.12%
+      mem   : 48.27%
+      steps : 19.03%
+    end proposal now succeeds:
+      size  : 21.22%
+      mem   : 45.33%
+      steps : 19.56%
+    end proposal in 100 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    end failed proposal now succeeds:
+      size  : 11.24%
+      mem   : 23.26%
+      steps : 10.98%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.31%
+      mem   : 14.51%
+      steps : 5.68%
+    execute succeeds:
+      size  : 57.35%
+      mem   : 41.58%
+      steps : 16.35%
+  Text Proposal:
+    create proposal succeeds:
+      size  : 14.02%
+      mem   : 22.40%
+      steps : 8.57%
+    create all shards succeeds:
+      size  : 22.06%
+      mem   : 43.43%
+      steps : 17.57%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.61%
+      mem   : 35.76%
+      steps : 14.28%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 15.83%
+      mem   : 32.69%
+      steps : 12.97%
+    merge all shards no votes succeeds:
+      size  : 18.08%
+      mem   : 180.33%
+      steps : 75.27%
+    vote succeeds:
+      size  : 4.69%
+      mem   : 20.07%
+      steps : 8.68%
+    merge all shards with votes succeeds:
+      size  : 18.46%
+      mem   : 182.02%
+      steps : 75.91%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 14.76%
+      mem   : 77.52%
+      steps : 31.04%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 14.20%
+      mem   : 62.57%
+      steps : 24.88%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 13.64%
+      mem   : 48.16%
+      steps : 18.98%
+    end proposal now succeeds:
+      size  : 21.74%
+      mem   : 44.63%
+      steps : 19.48%
+    end proposal in 100 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    end failed proposal now succeeds:
+      size  : 11.49%
+      mem   : 23.20%
+      steps : 10.94%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.57%
+      mem   : 14.44%
+      steps : 5.65%
+    execute succeeds:
+      size  : 10.67%
+      mem   : 13.23%
+      steps : 5.19%
+  Delist Asset:
+    create proposal succeeds:
+      size  : 12.99%
+      mem   : 20.04%
+      steps : 7.73%
+    create all shards succeeds:
+      size  : 21.83%
+      mem   : 47.74%
+      steps : 19.08%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.38%
+      mem   : 40.07%
+      steps : 15.79%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 15.59%
+      mem   : 37.00%
+      steps : 14.48%
+    merge all shards no votes succeeds:
+      size  : 17.85%
+      mem   : 180.50%
+      steps : 75.36%
+    vote succeeds:
+      size  : 4.85%
+      mem   : 21.37%
+      steps : 9.19%
+    merge all shards with votes succeeds:
+      size  : 18.23%
+      mem   : 180.37%
+      steps : 75.20%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 14.86%
+      mem   : 77.72%
+      steps : 31.14%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 14.30%
+      mem   : 66.24%
+      steps : 26.31%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 13.74%
+      mem   : 50.36%
+      steps : 19.81%
+    end proposal now succeeds:
+      size  : 21.27%
+      mem   : 41.69%
+      steps : 18.20%
+    end proposal in 100 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    end failed proposal now succeeds:
+      size  : 11.38%
+      mem   : 23.32%
+      steps : 11.01%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.45%
+      mem   : 14.56%
+      steps : 5.72%
+    execute succeeds:
+      size  : 12.24%
+      mem   : 35.59%
+      steps : 14.16%
+  Migrate Asset:
+    create proposal succeeds:
+      size  : 13.40%
+      mem   : 20.09%
+      steps : 7.75%
+    create all shards succeeds:
+      size  : 22.25%
+      mem   : 47.78%
+      steps : 19.10%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.79%
+      mem   : 40.11%
+      steps : 15.81%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 16.01%
+      mem   : 37.04%
+      steps : 14.50%
+    merge all shards no votes succeeds:
+      size  : 18.26%
+      mem   : 180.54%
+      steps : 75.38%
+    vote succeeds:
+      size  : 4.85%
+      mem   : 21.37%
+      steps : 9.19%
+    merge all shards with votes succeeds:
+      size  : 18.65%
+      mem   : 180.41%
+      steps : 75.22%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 15.28%
+      mem   : 81.96%
+      steps : 32.87%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 14.72%
+      mem   : 65.47%
+      steps : 26.07%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 14.15%
+      mem   : 49.66%
+      steps : 19.60%
+    end proposal now succeeds:
+      size  : 21.69%
+      mem   : 41.74%
+      steps : 18.22%
+    end proposal in 100 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    end failed proposal now succeeds:
+      size  : 11.58%
+      mem   : 23.34%
+      steps : 11.02%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.66%
+      mem   : 14.58%
+      steps : 5.73%
+    execute succeeds:
+      size  : 12.65%
+      mem   : 35.57%
+      steps : 14.14%
+  Modify Protocol params:
+    create proposal succeeds:
+      size  : 13.81%
+      mem   : 22.58%
+      steps : 8.66%
+    create all shards succeeds:
+      size  : 21.86%
+      mem   : 43.61%
+      steps : 17.66%
+    create shards in chunks of 5 succeeds (stats for 5):
+      size  : 17.40%
+      mem   : 35.94%
+      steps : 14.37%
+    create shards in chunks of 7 succeeds (stats for 3):
+      size  : 15.62%
+      mem   : 32.88%
+      steps : 13.06%
+    merge all shards no votes succeeds:
+      size  : 17.87%
+      mem   : 180.52%
+      steps : 75.36%
+    vote succeeds:
+      size  : 4.69%
+      mem   : 20.07%
+      steps : 8.68%
+    merge all shards with votes succeeds:
+      size  : 18.26%
+      mem   : 180.39%
+      steps : 75.20%
+    merge shards with votes in chunks of 6 succeeds (stats for 4):
+      size  : 14.89%
+      mem   : 77.74%
+      steps : 31.15%
+    merge shards with votes in chunks of 7 succeeds (stats for 3):
+      size  : 14.32%
+      mem   : 62.79%
+      steps : 24.99%
+    merge shards with votes in chunks of 2 succeeds (stats for 2):
+      size  : 13.76%
+      mem   : 48.38%
+      steps : 19.09%
+    end proposal now succeeds:
+      size  : 21.53%
+      mem   : 45.40%
+      steps : 19.60%
+    end proposal in 100 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    end proposal in 1900 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    end proposal in 3000 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    end failed proposal now succeeds:
+      size  : 11.39%
+      mem   : 23.32%
+      steps : 11.00%
+    end failed proposal in 100 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    end failed proposal in 1900 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    end failed proposal in 3000 days from start succeeds:
+      size  : 11.46%
+      mem   : 14.56%
+      steps : 5.71%
+    execute succeeds:
+      size  : 11.85%
+      mem   : 32.48%
+      steps : 12.77%
+Staking:
+  init ref script:
+    size  : 56.30%
+    mem   : 0.00%
+    steps : 0.00%
+  open position:
+    size  : 12.13%
+    mem   : 28.58%
+    steps : 10.54%
+  unstake:
+    size  : 11.68%
+    mem   : 26.84%
+    steps : 10.64%
+  stake:
+    size  : 4.38%
+    mem   : 37.63%
+    steps : 14.34%
+  distribute (2 UTXOs):
+    size  : 3.64%
+    mem   : 30.62%
+    steps : 12.65%
+  distribute (3 UTXOs):
+    size  : 4.21%
+    mem   : 48.48%
+    steps : 20.32%
+  distribute (4 UTXOs):
+    size  : 4.78%
+    mem   : 71.31%
+    steps : 30.11%
+  distribute (5 UTXOs):
+    size  : 5.35%
+    mem   : 99.22%
+    steps : 42.07%
+  distribute (7 UTXOs):
+    size  : 6.48%
+    mem   : 170.60%
+    steps : 72.73%
+  distribute (9 UTXOs):
+    size  : 7.62%
+    mem   : 262.92%
+    steps : 112.47%
+  distribute (11 UTXOs):
+    size  : 8.75%
+    mem   : 375.38%
+    steps : 160.82%
+Liquidity:
+  init ref script:
+    size  : 4.93%
+    mem   : 0.00%
+    steps : 0.00%
+  create liquidity position:
+    size  : 2.37%
+    mem   : 0.00%
+    steps : 0.00%
+  update liquidity position:
+    size  : 3.11%
+    mem   : 0.45%
+    steps : 0.19%
+  close liquidity position:
+    size  : 2.12%
+    mem   : 0.45%
+    steps : 0.19% 

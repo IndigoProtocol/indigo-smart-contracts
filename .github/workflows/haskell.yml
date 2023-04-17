@@ -1,0 +1,37 @@
+name: Indigo CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  style-check:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mrkkrp/ormolu-action@v6
+
+  linter:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run hlint
+        run: curl -sSL https://raw.githubusercontent.com/ndmitchell/hlint/87c1e0b6613e592ab6a17ec9811885e17939d886/misc/run.sh | sh -s . # v3.4.1
+  build:
+    runs-on: self-hosted
+    needs: [style-check, linter]
+    steps:
+      - uses: cachix/cachix-action@v10
+        if: ${{ env.KEY != '' && env.NAME != '' }}
+        with:
+          name: '${{ secrets.CACHIX_NAME }}'
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        env:
+          KEY: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          NAME: ${{ secrets.CACHIX_NAME }}
+
+      - name: Build the full ci derivation
+        # Use this version if github actions are killed with OOM
+        # run: nix build .#check.x86_64-linux --max-jobs 1 --cores 2
+        run: nix build .#check.x86_64-linux -L

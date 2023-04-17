@@ -1,0 +1,11 @@
+index-state: 2022-05-18T00:00:00Z
+
+packages: ./indigo.cabal
+
+tests: True
+benchmarks: True
+
+test-show-details: streaming
+
+package *
+  haddock-options: --ignore-all-exports "--optghc=-fplugin-opt PlutusTx.Plugin:defer-errors"
